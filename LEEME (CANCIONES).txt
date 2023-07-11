@@ -1,0 +1,5 @@
+Todas las canciones para probar el reproductor están en esta carpeta de drive, porque github tiene limite de tamaño de repositorio:
+
+https://drive.google.com/drive/folders/1SY15DZYJcBKieZTS1AxLMFwTKaKYzLIY?usp=sharing
+
+Las canciones tienen que tener estos nombres para poder ser cargados en la página web, ya que el javascript checkea el nombre del archivo para asignar blob URLs a cada subida. Si no se utilizan estos archivos, se deben subir archivos de sonido o video con el nombre exacto.
