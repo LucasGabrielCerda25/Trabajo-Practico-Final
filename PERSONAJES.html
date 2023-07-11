@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Gearaoke!</title>
+    <link rel="Stylesheet" href="Estilos.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          width: 100vw;
+          background-color: rgba(0, 0, 0, 0.603);
+          border-radius: 10px;
+          border-color: #e65c00;
+          border-style: double;
+        }
+        .left-div {
+          flex: 1;
+          width: 20%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.514);
+          color: white;
+          padding: 10px;
+          border-radius: 10px;
+          border-color: #e65c00;
+          border-style: double;
+        }
+        .right-divs {
+          height: 100%;
+          flex: 4;
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          border-color: #e65c00;
+          border-style: double;
+        }
+        .top-right {
+          height: 60%;
+          flex: 2;
+          background-color: rgba(0, 0, 0, 0.356);
+          color: white;
+          padding: 10px;
+        }
+        .bottom-right {
+          flex: 1;
+          background-color: rgba(0, 0, 0, 0.336);
+          color: white;
+          padding: 100px;
+
+        }
+        .characterList{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+        }
+        .list-item {
+          display: flex;
+          align-items: center;
+          margin: 5%;
+        }
+        .list-image {
+          width: calc(33.33% - 23px);
+          height: auto;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .list-text {
+          display: flex;
+          flex-direction: column;
+          color: white;
+        }
+        .list-title {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        .list-link {
+          color: white;
+          text-decoration: underline;
+        }
+        .container2 {
+        display: flex;
+        }
+
+        .info {
+        flex: 2;
+        width: 66.67%;
+        }
+
+        .image-container {
+        flex: 1;
+        position: relative;
+        width: 20vw;
+        height: 40vw;
+        }
+        .image-wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        }
+        .main-image {
+        width: 20vw;
+        height: 40vw; 
+        object-fit: cover; 
+        }
+
+        .hover-image {
+        position: absolute;
+        top: -13.9%;
+        left: -17%;
+        width: 124%;
+        height: 124%;
+        opacity: 0; 
+        transition: opacity 0.5s ease;
+        }
+
+        .image-container:hover .hover-image {
+        opacity: 1; 
+        }
+
+        .bottom-right {
+            flex: 1;
+            position: relative;
+            bottom:0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            max-width: 100%;
+            max-height: 25%;
+        }
+
+        .gifs-container {
+            display: flex;
+            gap: 10px;
+            max-width: 30vw;
+        }
+
+        .gif {
+            height: auto;
+            max-height: calc(33.33% - 20px); 
+            max-width: calc(50% - 20px); 
+            object-fit: cover;
+        }
+    
+    </style>
+    <script src="characters.js" defer></script>
+
+</head>
+<body>
+    <header id="header">
+        <div class="headerWrap2" id="HeaderSelector">
+          <a href="https://portal.symphogear.com/"><img class="logo1" src="logo.webp" alt="Página oficial de Symphogear" title="¡Visita la página oficial del anime!"></a>
+          <ul class="MenuSelector1">
+                <li class="NavHeading" id="navHead6">
+                    <a class="navLink1" id="nLnk6" href="Inicio.html">
+                        INICIO
+                    </a>    
+                </li>
+                <li class="NavHeading" id="navHead5">
+                    <a class="navLink1" id="nLnk5" href="MUSICA.html">
+                        MÚSICA
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead4">
+                    <a class="navLink1" id="nLnk4" href="PERSONAJES.html">
+                        PERSONAJES
+                    </a>                   
+                </li>
+                <li class="NavHeading" id="navHead3">
+                    <a class="navLink1" id="nLnk3" href="SINOPSIS.html">
+                        SINOPSIS
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead2">
+                    <a class="navLink1" id="nLnk2" href="medios.html">
+                        MEDIOS
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead1">
+                    <a class="navLink1" id="nLnk1" href="registrarse.html">
+                        REGISTRATE
+                    </a>
+                </li>
+            </ul>                             
+        </div>
+        
+                 
+    </header>
+    <div class="container">
+        <div class="left-div">
+          <ul class="characterList">
+            <li class="list-item">
+              <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_1.webp" alt="Circular Image">
+              <div class="list-text">
+                <span class="list-title">Hibiki Tachibana</span>
+                <a class="list-link" href="https://es.wikipedia.org/wiki/Aoi_Y%C5%ABki" target="_blank">CV:悠木 碧, Aoi Yūki </a>
+              </div>
+            </li>
+            <li class="list-item">
+              <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_3.webp" alt="Circular Image">
+              <div class="list-text">
+                <span class="list-title">Tsubasa Kazanari</span>
+                <a class="list-link" href="https://es.wikipedia.org/wiki/Nana_Mizuki" target="_blank">CV: 水樹 奈々, Nana Mizuki</a>
+              </div>
+            </li>
+            <li class="list-item">
+              <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_4.webp" alt="Circular Image">
+              <div class="list-text">
+                <span class="list-title">Chris Yukine</span>
+                <a class="list-link" href="https://es.wikipedia.org/wiki/Ayahi_Takagaki" target="_blank">CV: 高垣 彩陽, Ayahi Takagaki</a>
+              </div>
+            </li>
+            <li class="list-item">
+              <img class="list-image" src="imagenes/CDs/Symphogear_Character_Song_6.webp" alt="Circular Image">
+              <div class="list-text">
+                <span class="list-title">Miku Kohinata</span>
+                <a class="list-link" href="https://es.wikipedia.org/wiki/Y%C5%ABka_Iguchi" target="_blank">CV: 井口 裕香,  Iguchi Yuka</a>
+              </div>
+            </li>
+            <li class="list-item">
+              <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_2.webp" alt="Circular Image">
+              <div class="list-text">
+                <span class="list-title">Maria Cadenzavna Eve</span>
+                <a class="list-link" href="https://es.wikipedia.org/wiki/Y%C5%8Dko_Hikasa" target="_blank">CV: 日笠 陽子, Yōko Hikasa</a>
+              </div>
+            </li>
+            <li class="list-item">
+                <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_6.webp" alt="Circular Image">
+                <div class="list-text">
+                  <span class="list-title">Shirabe Tsukuyomi</span>
+                  <a class="list-link" href="https://es.wikipedia.org/wiki/Yoshino_Nanj%C5%8D" target="_blank">CV: 南條愛乃, Yoshino Nanjō</a>
+                </div>
+              </li>
+              <li class="list-item">
+                <img class="list-image" src="imagenes/CDs/Symphogear_AXZ_Character_Song_5.webp" alt="Circular Image">
+                <div class="list-text">
+                  <span class="list-title">Kirika Akatsuki</span>
+                  <a class="list-link" href="https://es.wikipedia.org/wiki/Ai_Kayano" target="_blank">CV: 茅野 愛衣, Ai Kayano</a>
+                </div>
+              </li>
+
+          </ul>
+        </div>
+        <div class="right-divs">
+            <div class="top-right">
+              <div class="container2">
+                <div class="info">
+                  <p class="characterInfo">Kirika Akatsuki (暁切歌 Akatsuki Kirika) es uno de los seis personajes principales de la serie Senki Zesshō Symphogear. Es una usuaria de Symphogear y empuña el relicario Igalima.                  </p>
+                  <p class="characterInfo">Kirika es una chica alegre, a veces infantil y optimista, a menudo se la ve entusiasta, especialmente en comparación con Shirabe y Maria. Se preocupa mucho por sus compañeros de equipo y está dispuesta a hacer lo que sea necesario para salvar a la humanidad. Su relación con Shirabe en particular roza lo romántico, y es extremadamente protectora con ella. Después de creer falsamente que era la reencarnación de Finé, Kirika se volvió cada vez más desequilibrada debido al pánico por la pérdida de su identidad, hasta el punto de intentar suicidarse cuando se da cuenta de su error. Utiliza "death" (デス desu) como su frase distintiva.</p>
+                </div>
+                <div class="image-container">
+                  <div class="image-wrapper">
+                    <img src="imagenes/Decoraciones/Kirika_XV.webp" alt="Image" class="main-image">
+                    <img src="imagenes/Decoraciones/Kirika_Symphogear_XV.png" alt="Hover Image" class="hover-image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-right">
+                <div class="gifs-container">
+                  <img src="imagenes/Decoraciones/Kirika_1.gif" alt="GIF 1" class="gif">
+                  <img src="imagenes/Decoraciones/Kirika_2.gif" alt="GIF 2" class="gif">
+                  <img src="imagenes/Decoraciones/Kirika_3.gif" alt="GIF 3" class="gif">
+                  <img src="imagenes/Decoraciones/Kirika_4.gif" alt="GIF 4" class="gif">
+                </div>
+              </div>              
+        </div>
+      </div>
+
+    
+    <footer>
+            <div class="footerWrap1">
+
+                    <ul class="footerSelect1">
+                        <li class="NavHeading2" id="navHead12">
+                            <a class="navLink1" id="nLnk12" href="Inicio.html">
+                                INICIO
+                            </a>    
+                        </li>
+                        <li class="NavHeading2" id="navHead11">
+                            <a class="navLink1" id="nLnk11" href="MUSICA.html">
+                                MÚSICA
+                            </a>
+                        </li>
+                        <li class="NavHeading2" id="navHead9">
+                            <a class="navLink1" id="nLnk9" href="PERSONAJES.html">
+                                PERSONAJES
+                            </a>                   
+                        </li>
+                    </ul>
+                
+                
+                    <ul class="footerSelect1">
+                        <li class="NavHeading2" id="navHead8">
+                            <a class="navLink1" id="nLnk8" href="SINOPSIS.html">
+                                SINOPSIS
+                            </a>
+                        </li>
+                        <li class="NavHeading2" id="navHead7">
+                            <a class="navLink1" id="nLnk7" href="medios.html">
+                                MEDIOS
+                            </a>
+                        </li>
+                        <li class="NavHeading2" id="navHead10">
+                            <a class="navLink1" id="nLnk10" href="registrarse.html">
+                                REGISTRATE
+                            </a>
+                        </li>
+                    </ul>
+            
+            </div>
+    </footer>
+</body>
+</html>

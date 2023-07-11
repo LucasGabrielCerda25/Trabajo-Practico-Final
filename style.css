@@ -1,0 +1,22 @@
+body {
+    background: #666;
+  }
+  p {
+    display:inline-block;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .word {
+    position: relative;
+    white-space: nowrap;
+    color: lightblue;
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+    z-index: 1;
+  }
+  @keyframes run-text {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  
+  

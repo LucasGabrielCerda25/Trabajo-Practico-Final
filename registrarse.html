@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Sign up for Gearaoke!</title>
+    <link rel="Stylesheet" href="Estilos.css">
+    <style>
+        .containerSquared {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+            padding: 15%;
+        }
+    
+        .containerForm {
+            width: 40vw;
+            margin-top: 10vh;
+            background-color: #222121;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 2;
+            border-style: double;
+            border-width: 5px;
+            border-color: #ff8049;
+        }
+    
+        .containerForm h2 {
+            font-family: "VenusRising";
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 0 10% 0;
+        }
+    
+        .containerForm input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    
+        .containerForm input::placeholder {
+            color: grey;
+        }
+    
+        .containerForm .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+    
+        .containerForm .form-row input {
+            width: calc(50% - 5px);
+        }
+    
+        .containerForm .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff8049;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    
+        .overlay-image {
+            position: absolute;
+            top: 25%;
+            left: -5%;
+            width: 100%;
+            height: 142.2%;
+            transform: scale(0.55);
+            transform-origin: top left;
+            z-index: 1;
+        }
+    
+        .dateField {
+            text-align: center;
+        }
+    
+        .extraFields {
+            text-align: center;
+        }
+    
+        .extraFields::placeholder {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    
+        #firstInputs {
+            width: 100%;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+    
+        #firstInputs input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #dates{
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        #extras{
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        @media only screen and (max-width:950px) {
+            .overlay-image{
+                top: 40%;
+                left: -65%;
+                width: 300vw;
+                height: 300vw;
+            }
+            .containerSquared{
+                padding:0;
+                margin: 40vh 0 20vh 0;
+            }
+            .containerForm {
+                width: 95%;
+                padding: 5%;
+            }
+        }
+        @media only screen and (max-height:500px) and (max-width:950px)   {
+            .overlay-image{
+                top: 100%;
+                left: -65%;
+            }
+        }
+    
+    </style>
+    <script src="login.js" defer></script>
+
+</head>
+<header id="header">
+    <div class="headerWrap2" id="HeaderSelector">
+        <a href="https://portal.symphogear.com/"><img class="logo1" src="logo.webp" alt="Página oficial de Symphogear" title="¡Visita la página oficial del anime!"></a>
+        <ul class="MenuSelector1">
+            <li class="NavHeading" id="navHead6">
+                <a class="navLink1" id="nLnk6" href="Inicio.html">
+                    INICIO
+                </a>    
+            </li>
+            <li class="NavHeading" id="navHead5">
+                <a class="navLink1" id="nLnk5" href="MUSICA.html">
+                    MÚSICA
+                </a>
+            </li>
+            <li class="NavHeading" id="navHead4">
+                <a class="navLink1" id="nLnk4" href="PERSONAJES.html">
+                    PERSONAJES
+                </a>                   
+            </li>
+            <li class="NavHeading" id="navHead3">
+                <a class="navLink1" id="nLnk3" href="SINOPSIS.html">
+                    SINOPSIS
+                </a>
+            </li>
+            <li class="NavHeading" id="navHead2">
+                <a class="navLink1" id="nLnk2" href="medios.html">
+                    MEDIOS
+                </a>
+            </li>
+            <li class="NavHeading" id="navHead1">
+                <a class="navLink1" id="nLnk1" href="registrarse.html">
+                    REGISTRATE
+                </a>
+            </li>
+        </ul>         
+                            
+    </div>
+    
+             
+</header>
+<div class="content">
+    <div class="containerSquared">
+        <img src="imagenes/Decoraciones/Hibiki_Season_2.webp" class="overlay-image" alt="BIKKI">
+        <form class="containerForm" id="form">
+            <h2>Crea una cuenta:</h2>
+            <div class="form-row" id="firstInputs">
+                <input type="email" placeholder="Email" id="emailInput">
+                <input type="text" placeholder="Usuario" id="usernameInput">
+                <input type="password" placeholder="Contraseña" id="passwordInput">
+                <input type="password" placeholder="Confirmar Contraseña" id="confirmPasswordInput">
+            </div>
+            <br>
+            <div class="form-row" id="dates">
+                <input type="text" placeholder="Día" maxlength="2" class="dateField" id="dateInput">
+                <input type="text" placeholder="Mes" maxlength="2" class="dateField" id="monthInput">
+                <input type="text" placeholder="Año" maxlength="4" class="dateField" id="yearInput">
+            </div>
+            <div class="form-row" id="extras">
+                <input type="text" placeholder="Canciones escuchadas" class="extraFields" id="listenedToSongsInput">
+                <input type="text" placeholder="Kg de Nagashi Somen comido" class="extraFields" id="eatenNagashiSomenInput">
+            </div>
+            <button class="submit-btn" type="submit" id="submitButton">Enviar</button>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footerWrap1">
+
+            <ul class="footerSelect1">
+                <li class="NavHeading2" id="navHead12">
+                    <a class="navLink1" id="nLnk12" href="Inicio.html">
+                        INICIO
+                    </a>    
+                </li>
+                <li class="NavHeading2" id="navHead11">
+                    <a class="navLink1" id="nLnk11" href="MUSICA.html">
+                        MÚSICA
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead9">
+                    <a class="navLink1" id="nLnk9" href="PERSONAJES.html">
+                        PERSONAJES
+                    </a>                   
+                </li>
+            </ul>
+        
+        
+            <ul class="footerSelect1">
+                <li class="NavHeading2" id="navHead8">
+                    <a class="navLink1" id="nLnk8" href="SINOPSIS.html">
+                        SINOPSIS
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead7">
+                    <a class="navLink1" id="nLnk7" href="medios.html">
+                        MEDIOS
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead10">
+                    <a class="navLink1" id="nLnk10" href="registrarse.html">
+                        REGISTRATE
+                    </a>
+                </li>
+            </ul>
+    
+    </div>
+</footer>
+</body>
+</html>

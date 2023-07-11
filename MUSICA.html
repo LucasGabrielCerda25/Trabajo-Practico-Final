@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Gearaoke!</title>
+    <link rel="Stylesheet" href="Estilos.css">
+    <style>
+        .content{
+            width:100%;
+            height:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }     
+        .analyzer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        } 
+    </style>
+    <script src="Main.js" defer></script>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="headerWrap2" id="HeaderSelector">
+            <a href="https://portal.symphogear.com/"><img class="logo1" src="logo.webp" alt="Página oficial de Symphogear" title="¡Visita la página oficial del anime!"></a>
+            <ul class="MenuSelector1">
+                <li class="NavHeading" id="navHead6">
+                    <a class="navLink1" id="nLnk6" href="Inicio.html">
+                        INICIO
+                    </a>    
+                </li>
+                <li class="NavHeading" id="navHead5">
+                    <a class="navLink1" id="nLnk5" href="MUSICA.html">
+                        MÚSICA
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead4">
+                    <a class="navLink1" id="nLnk4" href="PERSONAJES.html">
+                        PERSONAJES
+                    </a>                   
+                </li>
+                <li class="NavHeading" id="navHead3">
+                    <a class="navLink1" id="nLnk3" href="SINOPSIS.html">
+                        SINOPSIS
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead2">
+                    <a class="navLink1" id="nLnk2" href="medios.html">
+                        MEDIOS
+                    </a>
+                </li>
+                <li class="NavHeading" id="navHead1">
+                    <a class="navLink1" id="nLnk1" href="registrarse.html">
+                        REGISTRATE
+                    </a>
+                </li>
+            </ul>                               
+        </div>
+    </header>
+    <div class="slidingElement" id="sliding-playlist">
+        <div class="Playlist" id="Playlist">
+            <ul class="sortable-list" id="list"></ul>
+        </div>
+        <div>
+            <img src="imagenes/Utility/button.webp" class="img-button" id="img-button" alt="boton">
+        </div>           
+    </div>
+    <div class="slidingElement" id="music-library">
+        <div class="Playlist" id="trackList">
+            <div class="search-container">
+                <input type="text" name="songs" id="songs" placeholder="Busca una canción...">
+                <div class="suggestions">
+                    <ul></ul>
+                </div>
+            </div>
+            <div style="position:absolute;bottom:0;font-size: 1rem;box-sizing: border-box;width:100%;">
+                <button id="addAllButton">Agregar todas las canciones</button>  
+            </div>
+        </div>
+        <div>
+            <img src="imagenes/Utility/button.webp" class="img-button" id="img-button2" alt="boton">
+        </div>
+    </div>
+    <div class="content">
+        <div class="analyzer">
+            <div id="visualizador" oncontextmenu="return false;">
+                <div id="displayTitulo">
+                    <p id="titulocancionactual"></p>
+                </div>   
+                <canvas id="canvas"></canvas>               
+            </div>
+            
+                <div class="karaoke">
+                    <div class="karaokeWrapper" id="Kanji">
+                    </div>
+                    <div class="karaokeWrapper" id="Romaji">
+                    </div>
+                    <div class="karaokeWrapper" id="Translated">
+                    </div>
+                </div>
+            <div> 
+                <input type="file" id="uploadInput" accept="audio/*" multiple>
+                <audio id="audio" controls onended="playNextSong()"></audio>               
+            </div>
+        </div>
+    </div>
+        <div class="controlsContainer">
+            <div class="timeContainer">
+                <input type="range" min="0" max="100" value="0" class="volume" id="timeSlider">
+            </div>
+            <span class="button-container">
+                <img class="playerButtons" id="uploadButton" src="./imagenes/Utility/upload.svg" alt="CARGAR CANCIONES">
+            </span>
+            <div>               
+            </div>
+            <div class="audioContainer">
+                <span class="button-container">
+                    <img class="playerButtons" id="previousButton" src="./imagenes/Utility/music-music-player-play-previous.svg" alt="ANTERIOR">
+                    <img class="playerButtons" id="Play-Pause" src="./imagenes/Utility/media-player-music-pause.svg" alt="PLAY/PAUSA"> 
+                    <img class="playerButtons" id="nextButton" src="./imagenes/Utility/music-next-next-button.svg" alt="SIGUIENTE">
+                </span> 
+                <span class="button-container">
+                    <img class="playerButtons" id="randomButton" src="./imagenes/Utility/music-player-random.svg" alt="RANDOM">
+                    <img class="playerButtons" id="loop" src="./imagenes/Utility/media-player-loop.svg" alt="BUCLE">
+                    <img class="playerButtons" id="karaoke" src="./imagenes/Utility/karaoke-sing-button.svg" alt="MODO KARAOKE">
+                </span>
+            </div>
+            <div>               
+            </div>
+            <div class="volumeContainer">
+                <input type="range" min="0" max="1000" value="1000" class="volume" id="songVolume">
+            </div>  
+        </div>
+        <div style="padding:20vh">
+
+        </div>
+    <footer>
+        <div class="footerWrap1">
+            <ul class="footerSelect1">
+                <li class="NavHeading2" id="navHead12">
+                    <a class="navLink1" id="nLnk12" href="Inicio.html">
+                        INICIO
+                    </a>    
+                </li>
+                <li class="NavHeading2" id="navHead11">
+                    <a class="navLink1" id="nLnk11" href="MUSICA.html">
+                        MÚSICA
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead9">
+                    <a class="navLink1" id="nLnk9" href="PERSONAJES.html">
+                        PERSONAJES
+                    </a>                   
+                </li>
+            </ul>
+            <ul class="footerSelect1">
+                <li class="NavHeading2" id="navHead8">
+                    <a class="navLink1" id="nLnk8" href="SINOPSIS.html">
+                        SINOPSIS
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead7">
+                    <a class="navLink1" id="nLnk7" href="medios.html">
+                        MEDIOS
+                    </a>
+                </li>
+                <li class="NavHeading2" id="navHead10">
+                    <a class="navLink1" id="nLnk10" href="registrarse.html">
+                        REGISTRATE
+                    </a>
+                </li>
+            </ul>
+            <img src="imagenes/Decoraciones/Maintenance_Chibi_1.webp" alt="Hibiki" class="footerImage">
+        </div>
+    </footer>
+</body>
+</html>

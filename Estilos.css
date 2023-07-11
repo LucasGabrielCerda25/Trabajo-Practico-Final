@@ -1,0 +1,555 @@
+body{
+    margin:0;padding:0;width:100%;
+    background-image: url(imagenes/Utility/bg.jpg);background-repeat: no-repeat;
+    background-position: center; background-size:cover;background-attachment: fixed;   
+}
+
+body,
+html { 
+    overflow-x: hidden;
+}
+
+
+ul{padding-left: 0;}
+li{font-family: Helvetica;}
+header
+    {
+    position:relative;padding:0;height:auto;
+    }
+.headerWrap2
+    {
+    display:flex;flex-direction: row;flex-wrap: nowrap;
+    position:relative;
+    object-fit: scale-down;background-color: black;
+    justify-content: space-between;
+    border-bottom: 1vw solid;
+    margin-bottom: 3vw;
+    border-image: url(imagenes/Utility/bg_line_horizontal.webp) 130 stretch;border-image-outset: 2.5;
+    border-image-width: 6;
+    z-index: 103;
+}
+.MenuSelector1
+    {
+    display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-around;
+    align-items:end;height:auto;max-width: 100%;float:right;margin:0 4vw 5vw 0;padding:0;
+    }
+.NavHeading
+    {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    padding: 0 0.5rem;
+    size:100%;
+    float: right;
+    }
+.navLink1
+    {
+    color:whitesmoke;text-decoration: none;
+    padding-bottom:10px;font-family: "symphoBoldItalic";
+    font-size: 3vw;text-align: justify;
+    }
+.navLink1:hover
+    {
+    color:red;
+    }
+.logo1
+    {
+        max-width: 20vw;height: auto;width:auto;
+    }
+@font-face 
+    {
+    font-family: "symphoBoldItalic";
+    src: url('fonts/Whitestone\ Bold\ Italic.otf')
+    }
+@font-face {
+      font-family: 'Broaek';
+      src: url('fonts/broaek-font/Broaek-Regular.woff2') format('woff2'),
+          url('fonts/broaek-font/Broaek-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+@font-face {
+      font-family: 'Broaek';
+      src: url('fonts/broaek-font/Broaek-Thin.woff2') format('woff2'),
+          url('fonts/broaek-font/Broaek-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+      font-display: swap;
+  }
+@font-face {
+      font-family: 'Broaek Outline';
+      src: url('fonts/broaek-font/Broaek-Outline.woff2') format('woff2'),
+          url('fonts/broaek-font/Broaek-Outline.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+
+@font-face {
+  font-family: "VenusRising";
+  src: url(fonts/venus-rising/venus\ rising\ rg.otf);
+}
+
+
+footer
+{
+    background-color: black;
+    border-bottom: 5vw solid;
+    border-image: url(imagenes/Utility/bg_line_horizontal.webp) 120 round;border-image-outset: 2vw; -webkit-transform: scaleY(-1);
+    transform: scaleY(-1); 
+    position: relative; bottom: 0; right:0; left:0;
+    z-index: 99;
+    padding-top:8vh;
+}
+.footerWrap1
+{
+    transform: scaleY(-1);
+    display:flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; text-align: justify;
+    background-color: black;
+
+}
+.footerSelect1
+{
+    margin:0 3vw 2vw 2vw;
+    padding: 0;
+}
+
+ul{list-style-type: none;}
+p{
+  font-family: "Broaek";
+}
+h1{
+  font-family: "Super Brigade Laser";
+}
+.content{
+  overflow: hidden;
+  min-height: 800px;
+}
+
+
+#visualizador{
+  display: flex;
+  justify-content: center;
+  position: static;
+  height: 40vw;
+  width: 60vw;
+}
+
+#canvas {
+  position: static;
+  width: 100%;
+  height: 100%;
+  border-radius: 45px 45px 45px 45px;
+}
+
+
+.controlsContainer{
+  position:fixed;
+  bottom:0;
+  height:8vh;
+  min-height:5vh;
+  width:100%;
+  border-width:5px 0 0 0;
+  border-color:#ff8049;
+  border-style: double;
+  background-color: black;
+  z-index: 100;
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+audio{
+  display:none;
+}
+input[type=file]{
+  display:none;
+}
+.audioContainer{
+  width:auto;
+  height: auto;
+  max-height: 6vh;
+  margin: 0 2vw 2vh 2vw;
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.button-container{
+  position:static;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  -webkit-user-drag: none;
+  height:100%;
+}
+.playerButtons{
+  width:100%;
+  height:100%;
+  margin:1.5vh 0 0.5vh 2vh;
+  -webkit-user-drag: none;
+}
+.playerButtons:hover{
+  filter:brightness(200%);
+}
+
+#displayTitulo {
+    overflow: hidden;
+    font-size: 4vw;
+    position: absolute;
+    width: 60vw;
+    height: 5vw;
+    margin-top: 5%;
+    padding: 3vw 0 3vw 0;
+  }
+
+#titulocancionactual {
+  display: block;
+  position: absolute;
+  overflow: visible;
+  width: 400%;
+  transform: translateX(100%);
+  animation: move 30s linear infinite;
+  text-shadow: 
+  -1px 0px 0px #ff8049, 
+  1px 0px 0px #ff8049, 
+  0px -1px 0px #ff8049, 
+  0px 1px 0px #ff8049;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+
+}
+
+/* Create the animation */
+@keyframes move {
+  to { transform: translateX(-100%); } 
+}
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: #ff8049;
+  }
+  
+::-webkit-scrollbar-thumb:active {
+    background: #c41111;
+  }
+
+.slidingElement{
+    position:fixed;
+    display: block;
+    top:-0.5vw; 
+    height: 14vw;
+    width: 24.5vw;
+    background-color: transparent;
+    z-index: 102;
+}
+#sliding-playlist{
+    right:0;
+}
+#music-library{
+    left: 1vw;
+}
+
+.Playlist{
+    border-top:0;
+    border-bottom: 5px;
+    border-left: 5px;
+    border-style: double;
+    border-color:#ff8049;
+    border-radius:0 0 10px 10px;
+    background-color: black;
+    height:0px;
+    width:100%;
+    position:relative;
+    top:0;
+    right: 1vw;
+    transition: height 0.2s;
+    overflow: hidden;
+}
+
+.img-button{
+    height: 4vw;
+    position:relative;
+    top:0;
+    user-select: none;
+  }
+#img-button{  
+    left: 9%;
+    width: 15vw;
+}
+#img-button2{
+    left: -1%;
+    width: 20vw;
+}
+
+.img-button:hover{
+    filter: drop-shadow(1px -2px 0.5px rgb(255, 0, 0));
+}
+
+.sortable-list {
+    position:absolute;
+    right:0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background: transparent;
+    border-radius: 7px;
+    padding: 0 0 5px 5px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin:0;
+  }
+.sortable-list .item {
+    list-style: none;
+    display: flex;
+    cursor: move;
+    width: 95%;
+    background: transparent;
+    align-items: center;
+    padding: 2px 4px 2px 0px;
+    justify-content: space-between;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 8px;
+    border-color: transparent;
+    position: relative;
+    left:0;
+    margin: 0;
+    cursor:grab;
+  }
+.sortable-list .item:hover {
+    background-color: #ff8049;
+  }
+
+.sortable-list .item:hover .song_artists{
+  color:black;
+}
+.item .details {
+    display: flex;
+    align-items: center;
+    max-width: 85%;
+  }
+.item .details img {
+    height: auto;
+    max-height: 43px;
+    min-width: 43px;
+    width: 43px;
+    pointer-events: none;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+.item .details .song_name {
+    font-size: medium;
+    color: white;
+    font-family: Helvetica;
+    font-weight: bold;
+    overflow: hidden;
+    width:100%;
+  }
+.song_artists{
+  font-weight: lighter;
+  color:rgb(141, 141, 141);
+  font-size: xx-small;
+  position: relative;
+  bottom: 0;
+}
+.item.dragging {
+    opacity: 0.6;
+  }
+.item.dragging :where(.details, i) {
+    opacity: 0;
+  }
+  .sortable-list li:first-child {
+    margin-top: 5vmin;
+}
+.delete-button{
+    position:relative;
+    right:0;
+    max-width: 15%;
+    max-height: 15%;;
+    filter: grayscale(100%);
+  }
+  
+.delete-button:hover{
+  filter: grayscale(0%) brightness(70%);
+  }
+    
+   input {
+    border: 0;
+    outline: transparent;
+  }
+  #songs{
+    font-family:helvetica;
+  }
+  .search-container {
+    width: 100%;
+    position: relative;
+    margin: 15px auto;
+  }
+  .search-container input,
+  .search-container .suggestions {
+    width: 100%;
+    background: #fff;
+    text-align: left;
+  }
+  .search-container input {
+    background: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    padding: 0 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: medium;
+  }
+  .search-container .suggestions {
+    position: absolute;
+    top: 60px;
+  }
+  
+  #addAllButton{
+    box-sizing: border-box;
+    color:grey;
+    background-color: #222222;
+    margin: 0 ;
+    width:100%;
+  }
+  .search-container ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    max-height: 330px;
+    overflow-y: auto;
+  }
+  .search-container ul.has-suggestions {
+    display: block;
+  }
+  .search-container ul li {
+    padding: 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .search-container ul li:hover {
+    background-color: #e65c00;
+  }
+  
+  .search-container input {
+    border-bottom: 2px solid #e65c00;
+  }
+  input[type=range] {
+    accent-color: #e65c00;
+    background-color: #fff;
+    border-radius: 0;
+    height:30px;
+  }
+  input[type=radio]{
+    color:#c41111;
+    accent-color:#e65c00;
+    border-color:#c41111;
+    height:5px;
+    width:5px;
+  }
+  form{
+    font-family:'Broaek';
+    color: white;
+  }
+  input{
+    font-family:'Broaek';
+    color: white;
+  }
+  
+  label{
+    font-family:'Broaek';
+    color:white;
+  }
+  .timeContainer{
+    position:fixed;
+    left:-0.24vw;
+    bottom:6vh;
+    width:100%;
+  }
+  #timeSlider{
+    border-radius: 0;
+    width:101%;
+  }
+  #songNumberInput{
+    color:black;
+    width:6vw;
+    position:absolute;
+    bottom:0;
+  }
+.footerImage {
+  position: absolute;
+  width:15%;
+  height: 100%;
+  right:5%;
+}
+
+h2{
+ font-family: "VenusRising"; 
+ margin-left: 5vw;
+ color: #e65c00;
+}
+@media only screen and (max-width:500px){
+    .audioContainer {
+      flex-wrap:wrap;  
+    }
+    .audioContainer{
+      height:35%;
+      width:35%;
+    }
+    #sliding-playlist{
+      width: 48%;
+    }
+    #music-library{
+      width:48%;
+    }
+    #img-button{
+      width: 100%;
+      height:5vh;
+      left:0.2vw;
+    }
+    #img-button2{
+      width: 100%;
+      height:5vh;
+    }
+    input[type=range]{
+      width:25vw;
+    }
+}
+
+@media screen and (max-width:960px)
+    {
+    .MenuSelector1
+        {
+        flex: 2; flex-wrap:wrap;
+        width:auto;
+        }
+    .logo1
+        {
+        width: auto;max-width: 90%;margin-left:10%;overflow: hidden;
+        }
+    .navLink1
+        {
+        font-size: 140%;margin-left: 3vw;margin-right: 3vw;
+        }
+    .headerWrap2
+        {
+        flex-direction:column;flex-wrap: nowrap;
+        }
+
+    }
